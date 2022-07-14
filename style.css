@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'khand', sans-serif;
+}
+
+/*HEADER*/
+
+.header-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-45deg, #27837f, #515151, #4762a1, #89b42c);
+    background-size: 400%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: backgroundTransition 8s ease-in-out infinite;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.social-media {
+    margin-top: 1rem;
+    display: flex;
+    position: relative;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 1rem 4rem;
+    border: 1px solid #fff;
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*CURVA DE ANIMAÇÃO*/
+    animation: backgroundTransition 8s ease-in-out infinite;
+}
+
+a:hover {
+    color: #4762a1;
+    background-color: #fff;
+}
+
+@keyframes backgroundTransition {
+    0% {
+        background-position: 0% 80%;
+    }
+
+    50% {
+        background-position: 80% 100%;
+    }
+
+    100% {
+        background-position: 0% 90%;
+    }
+}
+
+/* MENU HAMBURGUER */
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace {
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    border-radius: 4px;
+    /*in a animação começa lento acaba rapido
+      out a animação começa rápida e acaba lenta
+      in-out começa e termina lento */
+    transition: 0.5s ease-in-out;
+}
+
+/*nth-child são as ordens das classes filhas do checkbox*/
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+/*MENU*/
+
+.menu {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px rgb(51, 148, 121);
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-itens {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-itens ul {
+    list-style-type: none;
+}
+
+.menu-itens ul li a {
+    margin: 10px 0px;
+    color: #4762a1;
+    text-decoration: none;    
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/* FORMAS CIRCULOS MENU */
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* MANTEM OS CIRCULOS RESTRITO AO ESPACO DELIMITADO */
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(39, 148, 173, 0.607);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+/* PARTICULAS MENU */
+.cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #28de58;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 10s ease-in forwards infinite;
+    visibility: hidden;
+    z-index: 101;
+  }
+
+  .cube:nth-child(2n) {
+    border-color: rgb(63, 157, 207) ;
+  }
+
+  .cube:nth-child(3n) {
+    border-color: rgb(246, 45, 199) ;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 0.5s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 1s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 1.5s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 2s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 2.5s;
+    left: 50vw;
+    top: 10vh;
+  }
+
+  .cube:nth-child(7) {
+    animation-delay: 3s;
+    left: 15vw;
+    top: 30vh;
+  }
+
+/* ANIMAÇÃO MENU */
+
+#toggle:checked + .checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2) {
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toggle:checked + .checkbox {
+    background-color: #fff;
+}
+
+/* ALTERAR COR DO FUNDO DO MENU */
+#toggle:checked ~ .menu {
+    box-shadow: 0px 0px 0px 100vmax white;
+    z-index: 1;
+    animation: 44s -27s move infinite ease-in-out alternate;
+}
+
+#toggle:checked ~ .cube {
+    visibility: visible;
+}
+
+#toggle:checked ~ .menu-itens {
+    visibility: visible;
+    opacity: 1;
+}
+
+#toggle:checked ~ .checkbox .trace {
+    background-color: #4762a1;
+}
+
+#toggle:checked ~ .menu-itens ul li a:hover {
+    margin: 10px 0px;
+    color: #ffffff;
+    background-color: #4762a1;
+    text-decoration: none;    
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+/* CARDS */
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.card {
+    height: 300px;
+    width: 400px;
+    margin: 3rem 0 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(0.5);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.c1 {
+    background-color: #515151;
+}
+
+.c2 {
+    background-color: #0c588e;
+}
+
+.c3 {
+    position: relative;
+    animation: instaBackAnimation 5s ease infinite;
+    background-size:100%;
+}
+
+
+.card-text {
+    width: 40%;
+    font-family: 'khand', sans-serif;
+    letter-spacing: 1px;
+    color: #4762a1;
+}
+
+.card-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: block;
+    border: 1px solid #ffffff;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.card-wrapper p {
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.card:hover > .card-wrapper::before {
+    opacity: 1;
+    width: 350px;
+    height: 250px;
+}
+
+.card:hover > .card-wrapper p {
+    font-size: 20px;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4762a1;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+    .social-media {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        margin-top: 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .container .card-container:nth-child(1),
+    .container .card-container:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .card {
+        height: 250px;
+        width: 250px;
+    }
+
+    .card-text {
+        width: 90%;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .card:hover > .card-wrapper::before {
+        height: 190px;
+        width: 190px;
+    }
+}
+
+/* ANIMACAO FUNDO INSTAGRAM */
+
+@keyframes instaBackAnimation {
+    0% {
+        background-color: #93146c;
+    }
+    25% {
+        background-color: #ff6b86;
+    }
+    100% {
+        background-color: #93146c;
+    }
+}
+
+
+/*ANIMACAO CUBOS*/
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+/* CIRCULOS ANIMACAO */
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+        background-color: #89b42c63;
+    }
+
+    50% {
+        background-color: #aa2bd0a1;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.708);
+    }
+
+}
